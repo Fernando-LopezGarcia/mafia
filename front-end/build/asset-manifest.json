@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e18fbca8.chunk.css",
+    "main.js": "/static/js/main.f94dc7cd.chunk.js",
+    "main.js.map": "/static/js/main.f94dc7cd.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.1870464d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.1870464d.js.map",
+    "static/js/2.2f64511d.chunk.js": "/static/js/2.2f64511d.chunk.js",
+    "static/js/2.2f64511d.chunk.js.map": "/static/js/2.2f64511d.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.456203205761efd283ba011453564e1d.js": "/precache-manifest.456203205761efd283ba011453564e1d.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.e18fbca8.chunk.css.map": "/static/css/main.e18fbca8.chunk.css.map",
+    "static/media/mafia.png": "/static/media/mafia.d7f3f346.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1870464d.js",
+    "static/js/2.2f64511d.chunk.js",
+    "static/css/main.e18fbca8.chunk.css",
+    "static/js/main.f94dc7cd.chunk.js"
+  ]
+}
