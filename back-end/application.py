@@ -3,14 +3,17 @@ from flask import request
 import pyrebase
 import random
 import string
+from flask_cors import CORS
+import sys
 
 app = Flask(__name__, static_folder="./../front-end/build/static", template_folder="./../front-end/build")
+CORS(app)
 
 config = {
-    "apiKey": "AIzaSyAJSlXYUqgGHpFTo0h9WQReihmGHquF-dk",
-    "authDomain": "web-sandbox-007.firebaseapp.com",
-    "databaseURL": "https://web-sandbox-007.firebaseio.com",
-    "storageBucket": "web-sandbox-007.appspot.com"
+    "apiKey": "AIzaSyBeYE_UDmmz-k3_EuQJu2y5MQab4J2-13E",
+    "authDomain": "spicy-mafia.firebaseapp.com",
+    "databaseURL": "https://spicy-mafia.firebaseio.com",
+    "storageBucket": "spicy-mafia.appspot.com"
   }
 
 firebase = pyrebase.initialize_app(config)
@@ -37,12 +40,16 @@ def get_roomID():
 @app.route('/create', methods=['GET','POST'])
 def create_game():
     if request.method == 'POST':
-        player_name = request.form['player-name']
-        # num_players = reques.form['num-players']
+        player_name = request.json['playername']
+        # num_players = reques.form['numplayers']
+
+        #print(player_name, file=sys.stderr)
+        #print('HERE', file=sys.stderr)
         
         player_role = assign_role()
         roomID = get_roomID()
 
+        #print('HERE3', file=sys.stderr)
         db.child("rooms").child(roomID).child(player_name).set(player_role)
 
         return str(roomID)
@@ -51,8 +58,8 @@ def create_game():
 @app.route("/join", methods=['GET','POST'])
 def join_game():
     if request.method == 'POST':
-        player_name = request.form['player-name']
-        roomID = request.form['roomID']
+        player_name = request.json['playername']
+        roomID = request.json['roomID']
         
         player_role = assign_role()
 
